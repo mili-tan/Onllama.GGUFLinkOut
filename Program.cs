@@ -27,12 +27,11 @@ namespace Onllama.GGUFLinkOut
                     ["digest"].ToString().Replace(":", "-");
 
                 if (!File.Exists(Path.Combine(modelPath, "blobs", digest))) continue;
-                var newName = item.Split("\\manifests\\").Last().TrimStartString("registry.ollama.ai\\library\\")
-                    .TrimStartString("registry.ollama.ai\\").Replace("\\", "-");
-                Console.WriteLine(newName + ":" + digest);
+                var name = string.Join("-", item.Split('/', '\\').TakeLast(3)).TrimStartString("library-");
+                Console.WriteLine(name + ":" + digest);
                 try
                 {
-                    File.CreateSymbolicLink($"./OllamaGGUFs/{newName}.gguf", Path.Combine(modelPath, "blobs", digest));
+                    File.CreateSymbolicLink($"./OllamaGGUFs/{name}.gguf", Path.Combine(modelPath, "blobs", digest));
                 }
                 catch (Exception e)
                 {
