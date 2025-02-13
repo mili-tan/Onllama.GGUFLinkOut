@@ -24,7 +24,7 @@ namespace Onllama.GGUFLinkOut
             var cmd = new CommandLineApplication
             {
                 Name = "Onllama.GGUFsLinkOut",
-                Description = $"Onllama.GGUFsLinkOut - {(isZh ? " 将 Ollama GGUF 模型文件软链接出，以便其他应用使用。" : "Create out symbolic links for the GGUF Models in Ollama Blobs.")}" +
+                Description = $"Onllama.GGUFsLinkOut - {(isZh ? "将 Ollama GGUF 模型文件软链接出，以便其他应用使用。" : "Create out symbolic links for the GGUF Models in Ollama Blobs.")}" +
                               Environment.NewLine +
                               $"Copyright (c) {DateTime.Now.Year} Milkey Tan. Code released under the MIT License"
             };
@@ -66,6 +66,7 @@ namespace Onllama.GGUFLinkOut
                     }
                 }
             });
+            cmd.Execute(args);
         }
 
         static List<string> TraverseFolder(string folderPath)
