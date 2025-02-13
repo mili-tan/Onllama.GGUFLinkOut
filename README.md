@@ -1,4 +1,6 @@
 # Onllama.GGUFLinkOut
+<a href='https://github.com/mili-tan/Onllama.GGUFLinkOut/releases/latest'><img src='https://img.shields.io/github/release/mili-tan/Onllama.GGUFLinkOut.svg' alt='GitHub-release' referrerPolicy='no-referrer' /></a>
+
 Simply run it with an Administrator or Root user and the symbolic links for GGUF Models will be created under the `OllamaGGUFs` folder in the current run directory. 
 
 That's it, nothing more.
